@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Crm Regression suite">
+
+<listeners>
+  <listener class-name ="com.crm.util.BasicListeners"/>
+</listeners>
+    <test name="Crm Create Case Creation" verbose="2">
+         <classes>
+            <class name = "com.crm.tests.CreateCaseTestScript"/>
+       
+          </classes>
+     </test> <!-- Test -->
+</suite> <!-- Suite -->

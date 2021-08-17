@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Crm Regression suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.crm.util.BasicListeners"/>
+  </listeners>
+  <test thread-count="5" name="Crm Create Case Creation(failed)">
+    <classes>
+      <class name="com.crm.tests.CreateCaseTestScript">
+        <methods>
+          <include name="init"/>
+          <include name="createCaseWithDetailsandinfo"/>
+          <include name="tearDown"/>
+          <include name="createCaseWithDetails"/>
+        </methods>
+      </class> <!-- com.crm.tests.CreateCaseTestScript -->
+    </classes>
+  </test> <!-- Crm Create Case Creation(failed) -->
+</suite> <!-- Failed suite [Crm Regression suite] -->

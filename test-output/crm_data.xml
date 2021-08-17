@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CrmLoginData>
+	<logindata id="set1">
+		<username>admin</username>
+		<password>admin</password>
+		<userName>arjun</userName>
+		<salutationName>Mr.</salutationName>
+		<firstName>krishna</firstName>
+		<lastName>arjun</lastName>
+		<title>UserCreation</title>
+		<email>rajkumar97@gmail.com</email>
+		<phonenumber>9393383733</phonenumber>
+		<gender>Male</gender>
+		<type>Regular</type>
+		<passWord>rajkumar</passWord>
+		<passwordConfirm>rajkumar</passwordConfirm>
+
+		<username>admin</username>
+		<password>admin</password>
+		<accountName>arjun</accountName>
+		<accountwebsite>www.rkrv.com</accountwebsite>
+		<accountemail>rajkumar@gmail.com</accountemail>
+		<accountphoneNumber>948388383</accountphoneNumber>
+		<billingStreet>first line</billingStreet>
+		<billingState>andrapradesh</billingState>
+		<billingcity>kakinada</billingcity>
+		<billingcountry>india</billingcountry>
+		<postalcode>323232</postalcode>
+		<shippingStreet>robinsStreet</shippingStreet>
+		<shippingCity>St.Johns</shippingCity>
+		<shippingState>Amestardam</shippingState>
+		<shippingCountry>Netharlands</shippingCountry>
+		<zipcode>1212121</zipcode>
+		
+		<username>admin</username>
+		<password>admin</password>
+		<caseName>srinivas</caseName>
+		<description>hitoall</description>
+		<caseDefectName>9849..eddfj,;3</caseDefectName>
+		<emptyName>  </emptyName>
+
+
+	</logindata>
+</CrmLoginData>
