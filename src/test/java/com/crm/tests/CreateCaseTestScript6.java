@@ -39,7 +39,7 @@ public class CreateCaseTestScript6 {
 		InitializeViews.init();
 	} 
 	
-	@Test(description = "Defect testcase", priority =0)
+	@Test(description = "Defect testcase")
 	public  void createCaseWithDetails() throws InterruptedException {
 		
 		BrowserDriver.getCurrentDriver().get(PropertyLoader.getUrl());

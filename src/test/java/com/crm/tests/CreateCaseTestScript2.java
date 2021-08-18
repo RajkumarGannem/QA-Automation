@@ -41,7 +41,7 @@ package com.crm.tests;
 			InitializeViews.init();
 		} 
 		
-		@Test(description = "This textcase creates case with all detials", priority =0)
+		@Test(description = "This textcase creates case without Account", priority =0)
 		public  void createCaseWithDetails() throws InterruptedException {
 			
 			BrowserDriver.getCurrentDriver().get(PropertyLoader.getUrl());
