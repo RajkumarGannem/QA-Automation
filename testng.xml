@@ -8,6 +8,9 @@
     <test name="Crm Create Case Creation" verbose="2">
          <classes>
             <class name = "com.crm.tests.CreateCaseTestScript"/>
+           
+            
+            
        
           </classes>
      </test> <!-- Test -->

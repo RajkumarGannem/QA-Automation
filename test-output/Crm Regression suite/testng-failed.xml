@@ -6,14 +6,16 @@
   </listeners>
   <test thread-count="5" name="Crm Create Case Creation(failed)">
     <classes>
-      <class name="com.crm.tests.CreateCaseTestScript">
+      <class name="com.crm.tests.CreateAccountTestScript">
         <methods>
           <include name="init"/>
-          <include name="createCaseWithDetailsandinfo"/>
+          <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="createCaseWithDetails"/>
+          <include name="createAccountWithBillingAddressAndShippingAddress"/>
+          <include name="getResult"/>
+          <include name="createAccountWithBillingAddress"/>
         </methods>
-      </class> <!-- com.crm.tests.CreateCaseTestScript -->
+      </class> <!-- com.crm.tests.CreateAccountTestScript -->
     </classes>
   </test> <!-- Crm Create Case Creation(failed) -->
 </suite> <!-- Failed suite [Crm Regression suite] -->

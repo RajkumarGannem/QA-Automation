@@ -3,9 +3,11 @@ package com.crm.tests;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.crm.config.BrowserDriver;
 import com.crm.config.PropertyLoader;
 import com.crm.data.CrmLoginData;
@@ -13,13 +15,15 @@ import com.crm.data.CrmTestData;
 import com.crm.data.LoginData;
 import com.crm.services.AccountService;
 import com.crm.services.HomeService;
+import com.crm.services.HomeService1;
 import com.crm.services.LoginService;
+import com.crm.util.BasicListeners;
 import com.crm.validators.CreateAccountValidators;
 
-public class CreateAccountTestScript {
+public class CreateAccountTestScript extends BasicListeners {
 	
 	LoginService loginService = null;
-	HomeService homeService = null;
+	HomeService1 homeService1 = null;
 	AccountService accountService = null;
 	CreateAccountValidators accountValidator = null;
 	
@@ -28,8 +32,11 @@ public class CreateAccountTestScript {
 	
 	@BeforeClass
 	public void init() {
+		
+		ExtentHtmlReporter reporter = new ExtentHtmlReporter("Reports//crm-test-result.html");
+
 		loginService = new LoginService();
-		homeService = new HomeService();
+		homeService1 = new HomeService1();
 		accountService = new AccountService();
 		accountValidator = new CreateAccountValidators();
 		
@@ -40,39 +47,42 @@ public class CreateAccountTestScript {
 		
 		BrowserDriver.getCurrentDriver().get(PropertyLoader.getUrl());
 		loginService.loginToApplication(appData.get(0).getUsername(), appData.get(0).getPassword());
-		
+		test = extent.createTest("Create Acount Test Cases");
+
 	}
 	
-/*	@Test(description = "It creates account billing address", priority =0)
+	@Test(description = "It creates account billing address", priority =0)
 	public void createAccountWithBillingAddress() throws InterruptedException {
 		
-		homeService.clickOnAccountsTab();
+		homeService1.clickOnAccountsTab();
 
 		accountService.clickOnCreateAccount();
-		accountService.insertAccountNameandEmail(appData.get(0).getAccountName(),appData.get(0).getAccountemail());
+		accountService.insertAccountName();
+		accountService.insertEmail(appData.get(0).getAccountemail());
 		accountService.insertAccountWebsite(appData.get(0).getAccountwebsite());
-		accountService.insertBillingAddress(appData.get(0).getBillingStreet(),appData.get(0).getBillingcity());
-		accountService.insertBillingAddress1(appData.get(0).getBillingState(),appData.get(0).getBillingcountry());
+		accountService.insertBillingAddress(appData.get(0).getBillingStreet());
+		accountService.insertBillingAddress1( appData.get(0).getBillingcity(),  appData.get(0).getBillingState(),appData.get(0).getBillingcountry(),appData.get(0).getPostalcode());
 		accountService.insertPhoneNumber(appData.get(0).getPhonenumber());
 		accountService.saveAccount();
 		
 
-		homeService.clickOnAccountsTab();
-		accountService.getCreatedACcountName();
+	//	homeService1.clickOnAccountsTab();
+	//	accountService.getCreatedACcountName();
 		
-		accountValidator.ValidAccountName(accountService);
+	//	accountValidator.ValidAccountName(accountService);
 		
 		
-	}    */
+	}    
 	
 	@Test(description = "This textcase creates account with billing and shipping address", priority =1)
 	public void createAccountWithBillingAddressAndShippingAddress() throws InterruptedException {
 		
-		homeService.clickOnAccountsTab();
-
+	
+		homeService1.clickOnAccountsTab();
 		
 		accountService.clickOnCreateAccount();
-		accountService.insertAccountNameandEmail(appData.get(0).getAccountemail());
+		accountService.insertAccountName();
+		accountService.insertEmail(appData.get(0).getAccountemail());
 		accountService.insertAccountWebsite(appData.get(0).getAccountwebsite());
 		accountService.insertPhoneNumber(appData.get(0).getPhonenumber());
 		accountService.insertBillingAddress(appData.get(0).getBillingStreet());
@@ -81,7 +91,7 @@ public class CreateAccountTestScript {
 		
 		accountService.saveAccount();
 		
-		accountValidator.validateBillingAddress(accountService);
+//		accountValidator.validateBillingAddress(accountService);
 		//accountValidator.validateShippingAddress(accountService);
 		
 	//	homeService.clickOnAccountsTab();
@@ -99,6 +109,8 @@ public class CreateAccountTestScript {
 		accountValidator.ValidBillingCity(accountService);
 		accountValidator.ValidBillingCountry(accountService);     */
 		
+		BrowserDriver.getCurrentDriver().findElement(By.id("nav-menu-dropdown")).click();
+		BrowserDriver.getCurrentDriver().findElement(By.linkText("Log Out")).click();
 		
 		
 

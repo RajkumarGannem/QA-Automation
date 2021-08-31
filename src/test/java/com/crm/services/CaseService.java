@@ -20,8 +20,8 @@ public class CaseService {
 		
 	}
 	
-	public CaseService insertCaseName(String cname) {
-		casePageContainer.getTxtCaseName().sendKeys(cname);
+	public CaseService insertCaseName(String sname) {
+		casePageContainer.getTxtCaseName().sendKeys(sname);
 		return this;
 	}
 	

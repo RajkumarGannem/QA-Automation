@@ -17,11 +17,20 @@ public class AccountService {
 	   
 	  return this;
    } 
-	   public AccountService insertAccountNameandEmail(String email) {
+	   public AccountService insertAccountName() {
 		   accountsPageContainer.getTxtAccountName().sendKeys(CommonUtil.generateRandomName());
-		   accountsPageContainer.getTxtAccountEmail().sendKeys(email);
 		   return this;
 		   
+	   }
+	   public AccountService insertEmtpyName(String aname) {
+		   accountsPageContainer.getTxtAccountName().sendKeys(aname);
+		   return this;
+	   }
+	   
+	   
+	   public AccountService insertEmail(String email) {
+		   accountsPageContainer.getTxtAccountEmail().sendKeys(email);
+            return this;
 	   }
 	   
 	   public AccountService insertAccountWebsite(String wsite) {

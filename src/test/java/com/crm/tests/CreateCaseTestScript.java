@@ -2,6 +2,7 @@ package com.crm.tests;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -22,9 +23,10 @@ import com.crm.data.LoginData;
 import com.crm.services.CaseService;
 import com.crm.services.HomeService;
 import com.crm.services.LoginService;
+import com.crm.util.BasicListeners;
 import com.crm.validators.CreateCaseValidators;
 
-public class CreateCaseTestScript {
+public class CreateCaseTestScript extends BasicListeners{
 	
 	LoginService loginService = null;
 	HomeService homeService = null;
@@ -34,19 +36,19 @@ public class CreateCaseTestScript {
 	CrmLoginData crmLoginData = null;
 	List<LoginData> appData = null;
 	
-	static ExtentTest elogger;
-	static ExtentReports extent = new ExtentReports();
+//	static ExtentTest elogger;
+//	static ExtentReports extent = new ExtentReports();
 
 	
 	@BeforeClass
 	public void init() {
 		ExtentHtmlReporter reporter = new ExtentHtmlReporter("Reports//crm-test-result.html");
 		
-		extent.setSystemInfo("OS Name", "Windows");
-		extent.setSystemInfo("Environment", "QA");
-		reporter.config().setDocumentTitle("Crm Automation Test Report for QA Environment");
-		extent.attachReporter(reporter);
-		elogger = extent.createTest("Crm Automation Test Cases");
+//		extent.setSystemInfo("OS Name", "Windows");
+//		extent.setSystemInfo("Environment", "QA");
+//		reporter.config().setDocumentTitle("Crm Automation Test Report for QA Environment");
+//		extent.attachReporter(reporter);
+//		elogger = extent.createTest("Crm Automation Test Cases");
 		
 		loginService = new LoginService();
 		homeService = new HomeService();
@@ -58,9 +60,14 @@ public class CreateCaseTestScript {
 
 		
 		InitializeViews.init();
+		
+		BrowserDriver.getCurrentDriver().get(PropertyLoader.getUrl());
+		loginService.loginToApplication(appData.get(0).getUsername(), appData.get(0).getPassword());
+		test = extent.createTest("Functional Test Cases");
+		
 	} 
 	
-	@AfterClass
+/*	@AfterClass
 	public void tearDown() {
 		BrowserDriver.getCurrentDriver().quit();
 		extent.flush();
@@ -79,13 +86,13 @@ public class CreateCaseTestScript {
 	    		MarkupHelper.createLabel(result.getName() + "Test Case Skipped", ExtentColor.ORANGE));
 		    	elogger.skip(result.getThrowable());
 		    }	
-	}
+	}  */
 		
 		@Test(description = "This textcase creates case with all detials", priority =0)
 		public  void createCaseWithDetails() throws InterruptedException {
 			
-			BrowserDriver.getCurrentDriver().get(PropertyLoader.getUrl());
-			loginService.loginToApplication(appData.get(0).getUsername(), appData.get(0).getPassword());
+//			BrowserDriver.getCurrentDriver().get(PropertyLoader.getUrl());
+//			loginService.loginToApplication(appData.get(0).getUsername(), appData.get(0).getPassword());
 			
 //			homeService.clickOnAccountsTab();
 			homeService.ClickonCaseTab();
@@ -110,7 +117,7 @@ public class CreateCaseTestScript {
 //			caseService.getCreatedACcountName();
 			
 		//	caseValidator.validateAccountName(caseService);
-            elogger.pass("Test Case is Passed");
+        //    elogger.pass("Test Case is Passed");
 			
 		}
 		
@@ -121,8 +128,8 @@ public class CreateCaseTestScript {
 //			homeService.clickOnAccountsTab();
 			homeService.ClickonCaseTab();
 			caseService.clickOnCreateCase();
-			caseService.insertCaseName(appData.get(0).getCaseName());
-			caseService.selectCaseStatus();
+			caseService.insertCaseName(appData.get(0).getAccountName());
+			caseService.selectCaseStatus(); 
 //			caseService.SelectCaseAccount();
 			caseService.SelectProirity();
 //			caseService.SelectCaseContact();
@@ -131,7 +138,7 @@ public class CreateCaseTestScript {
 			caseService.WriteDescription(appData.get(0).getDescription());
 			caseService.saveAccount();
 			
-			elogger.pass("Test Case with only details is passed");
+		//	elogger.pass("Test Case with only details is passed");
 		}
 		
 		@Test(description = "This textcase creates case with valid information", priority =2)
@@ -149,7 +156,10 @@ public class CreateCaseTestScript {
 			caseService.WriteDescription(appData.get(0).getDescription());
 			caseService.saveAccount();
 			
-			elogger.pass("Test Case with only details is passed");
+			BrowserDriver.getCurrentDriver().findElement(By.id("nav-menu-dropdown")).click();
+			BrowserDriver.getCurrentDriver().findElement(By.linkText("Log Out")).click();
+			
+		//	elogger.pass("Test Case with only details is passed");
 		}
 }
 

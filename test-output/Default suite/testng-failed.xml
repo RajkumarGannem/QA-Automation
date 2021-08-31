@@ -5,9 +5,11 @@
     <classes>
       <class name="com.crm.tests.CreateCaseTestScript">
         <methods>
+          <include name="createCaseWithDetailsandinfo1"/>
+          <include name="setUp"/>
           <include name="init"/>
-          <include name="createCaseWithDetailsandinfo"/>
           <include name="tearDown"/>
+          <include name="createCaseWithDetailsandinfo"/>
           <include name="getResult"/>
           <include name="createCaseWithDetails"/>
         </methods>

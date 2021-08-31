@@ -44,7 +44,7 @@ public class CreateUserTestScript {
 		@Test 
 		public void CreateUserAccountwithdetails() throws InterruptedException  {
 			
-			   homeService.clickOnDropDown();
+			    homeService.clickOnDropDown();
 			   userService.clickOnUserDropDown();
 			   userService.clickOncreateUser();
 			   userService.insertusernameandemail(appData.get(0).getSalutationName(),appData.get(0).getFirstName(),appData.get(0).getLastName(),appData.get(0).getEmail());

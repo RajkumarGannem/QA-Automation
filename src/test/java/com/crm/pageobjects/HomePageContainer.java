@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePageContainer {
 	
-/*	@FindBy(xpath = "//span[text() = 'Accounts']")
+	@FindBy(xpath = "//span[text() = 'Accounts']")
 	public WebElement ClickOnAccountsTab;
 
 	public WebElement getClickOnAccountsTab() {
@@ -14,11 +14,11 @@ public class HomePageContainer {
 
 	public void setClickOnAccountsTab(WebElement clickOnAccountsTab) {
 		ClickOnAccountsTab = clickOnAccountsTab;
-	}   */    
+	}       
 	
 	
 	
-/*		@FindBy(xpath = "//a[@class='dropdown-toggle']")
+		@FindBy(xpath = "//a[@class='dropdown-toggle']")
 	public WebElement ClickOnDropdownElement;
 	
 	public WebElement getClickOnDropdownElement() {
@@ -27,7 +27,7 @@ public class HomePageContainer {
 
 	public void setClickOnDropdownElement(WebElement clickOnDropdownElement) {
 		ClickOnDropdownElement = clickOnDropdownElement;
-	}    */     
+	}         
 	
 /*   @FindBy(xpath ="//span[text()='Contacts']")
 	public WebElement homepageContactsTab;

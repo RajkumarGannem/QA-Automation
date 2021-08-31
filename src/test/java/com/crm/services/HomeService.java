@@ -21,17 +21,19 @@ public class HomeService {
 		
 	}  */
 	
-/*	public void clickOnDropDown() {
+	public void clickOnDropDown() {
 		homePageContainer.getClickOnDropdownElement().click();
-		log.info("User Page opened");
-	}    */   
+	//	log.info("User Page opened");
+	}       
 	
 	public void ClickonCaseTab() {
 		homePageContainer.getHomepageCasesTab().click();
-	}
+	} 
 	
 	public static void init() {
 		homePageContainer = PageFactory.initElements(BrowserDriver.getCurrentDriver(), HomePageContainer.class);
 	}
+
+
 
 }

@@ -6,6 +6,7 @@ import com.crm.config.BrowserDriver;
 import com.crm.services.AccountService;
 import com.crm.services.CaseService;
 import com.crm.services.HomeService;
+import com.crm.services.HomeService1;
 import com.crm.services.LoginService;
 import com.crm.services.UserService;
 
@@ -17,10 +18,12 @@ public class InitializeViews {
 		driver = BrowserDriver.getCurrentDriver();
 		LoginService.init();
 
-		HomeService.init();
+     	HomeService.init();
+		HomeService1.init();
+
 		CaseService.init();
-//	    UserService.init();
-//		AccountService.init();
+	    UserService.init();
+		AccountService.init();
 	
 		
 		
