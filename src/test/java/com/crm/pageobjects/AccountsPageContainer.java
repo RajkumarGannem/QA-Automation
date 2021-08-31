@@ -163,13 +163,13 @@ public class AccountsPageContainer {
 		this.phoneDropDown = phoneDropDown;
 	}
 
-	public WebElement getAccountNameAccountPage() {
+/*	public WebElement getAccountNameAccountPage() {
 		return AccountNameAccountPage;
 	}
 
 	public void setAccountNameAccountPage(WebElement accountNameAccountPage) {
 		AccountNameAccountPage = accountNameAccountPage;
-	}    
+	}  */    
 
 		public WebElement getTxtAccountEmail() {
 		return txtAccountEmail;
@@ -254,7 +254,7 @@ public class AccountsPageContainer {
 
 
 
-	public WebElement getCreatedtxtBillingCity() {
+/*	public WebElement getCreatedtxtBillingCity() {
 		return createdtxtBillingCity;
 	}
 
@@ -284,7 +284,7 @@ public class AccountsPageContainer {
 
 	public void setCreatedtxtBillingStreet(WebElement createdtxtBillingStreet) {
 		this.createdtxtBillingStreet = createdtxtBillingStreet;
-	}
+	} */
 
 	public WebElement getGetBillAdd() {
 		return getBillAdd;

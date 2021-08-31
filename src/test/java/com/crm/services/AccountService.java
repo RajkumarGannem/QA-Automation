@@ -82,11 +82,11 @@ public class AccountService {
 		   return str;
 	   }
 	   
-	   public String getCreatedACcountName() {
+/*	   public String getCreatedACcountName() {
 		   String aname = accountsPageContainer.getAccountNameAccountPage().getText();
 		   System.out.println("Account Name: "+aname);
 		   return aname;
-	   }   
+	   }  */   
 	   
 /*	   public String getCreatedBillingStreet() {
 		   String bstreet = accountsPageContainer.getCreatedtxtBillingStreet().getText();
