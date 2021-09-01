@@ -35,8 +35,8 @@ public class AccountsPageContainer {
 	@FindBy(xpath = "//button[text()='Save']")
 	public WebElement saveAccount;
 	
-//	@FindBy(xpath = "//td[@data-name='name']")
-//	public WebElement AccountNameAccountPage;
+	@FindBy(xpath = "//td[@data-name='name']")
+	public WebElement AccountNameAccountPage;
 	
 	@FindBy(xpath = "//select[@data-property-type='type']")
 	public WebElement phoneDropDown;
@@ -163,13 +163,13 @@ public class AccountsPageContainer {
 		this.phoneDropDown = phoneDropDown;
 	}
 
-/*	public WebElement getAccountNameAccountPage() {
+	public WebElement getAccountNameAccountPage() {
 		return AccountNameAccountPage;
 	}
 
 	public void setAccountNameAccountPage(WebElement accountNameAccountPage) {
 		AccountNameAccountPage = accountNameAccountPage;
-	}  */    
+	}      
 
 		public WebElement getTxtAccountEmail() {
 		return txtAccountEmail;
